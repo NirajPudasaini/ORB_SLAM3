@@ -8,14 +8,14 @@ Before you begin, ensure your Xavier board is running the latest version of Jetp
 ## Step 1: Install Dependencies
 
 ```markdown
-#First, update your package list and install the necessary dependencies.
+# First, update your package list and install the necessary dependencies.
 
 ```sh
 sudo apt update && sudo apt upgrade -y
 sudo apt-get install build-essential cmake git libgtk-3-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 sudo apt-get install python3-dev python3-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
 sudo apt-get install libeigen3-dev libglew-dev libboost-all-dev libssl-dev
-```
+
 
 ## Step 2: Install OpenCV
 
