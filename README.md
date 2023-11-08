@@ -8,9 +8,7 @@ Before you begin, ensure your Xavier board is running the latest version of Jetp
 ## Step 1: Install Dependencies
 
 ```markdown
-
-
-First, update your package list and install the necessary dependencies.
+#First, update your package list and install the necessary dependencies.
 
 ```sh
 sudo apt update && sudo apt upgrade -y
