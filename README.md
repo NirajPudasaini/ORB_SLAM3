@@ -101,4 +101,41 @@ chmod +x build.sh
 ./build.sh
 ```
 
-Follow these steps to get ORB-SLAM3 up and running on your NVIDIA Jetson AGX Xavier. Ensure that you have all the necessary permissions to execute the scripts and that your system's hardware requirements are met for successful compilation and execution of the software.
+## Step 5: Running ORB-SLAM3 Live with RealSense D435 Camera
+
+To run ORB-SLAM3 with a RealSense D435 camera, follow these steps:
+
+1. Plug in the RealSense D435 camera to the AGX board.
+2. Navigate to the ORB-SLAM3 directory:
+    ```sh
+    cd ~/ORB_SLAM3
+    ```
+3. Execute the following command:
+    ```sh
+    ./Examples/Stereo/stereo_realsense_D435i Vocabulary/ORBvoc.txt ./Examples/Stereo/RealSense_D435i.yaml
+    ```
+
+### Handling Segmentation Fault Error
+
+If you encounter a segmentation fault error on Step 5, such as:
+
+```
+SLAM settings:
+    -Camera 1 parameters (Pinhole): [ 382.613 382.613 320.183 236.455 ]
+Segmentation fault (core dumped)
+```
+
+You can resolve it by commenting out a specific line in the `ORB_SLAM3/src/System.cc` file. Open the file and comment out the following line:
+
+```cpp
+// cout << (*settings_) << endl;
+```
+
+Then recompile ORB-SLAM3:
+
+```sh
+cd ~/Dev/ORB_SLAM3
+./build.sh
+```
+
+and go back to Step 5.
